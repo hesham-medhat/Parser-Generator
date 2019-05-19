@@ -68,6 +68,7 @@ Parser::Parser(LexicalAnalyzer &lexicalAnalyzer, std::istream &inputStream)
             } else if (productionTok == "$$") {
                 nonterminalsArray[i]->addTransition
                         (terminalsArray[terminalIndex], epsilonProduction);
+                nonterminalsArray[i]->hasEpsilonProduction = true;
             } else if (productionTok == "$$$") {
                 continue;
             } else {
